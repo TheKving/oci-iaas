@@ -14,5 +14,5 @@ provider "oci" {
 
 module "network" {
   source          = "./modules/network"
-  account_secrets = var.account_secrets
+  account_secrets = var.account_secrets.default.compartment_id
 }

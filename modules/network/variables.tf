@@ -1,4 +1,4 @@
 variable "account_secrets" {
-  type        = map(any)
+  type        = string
   description = "account secrets vars"
 }
