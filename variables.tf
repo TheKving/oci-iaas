@@ -5,9 +5,9 @@ variable "region" {
 }
 
 variable "compartment_id" {
-  type = string
-  description = "Account region"  
-  default = var.TF_VAR_compartment_id
+  type        = string
+  description = "Account region"
+  #default = var.TF_VAR_compartment_id
 }
 /*
 variable "account_secrets" {
