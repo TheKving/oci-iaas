@@ -32,5 +32,5 @@ module "dns" {
 module "network" {
   source              = "./modules/network"
   compartment_id      = var.compartment_id
-  test_publicdns_name = modules.dns.public_dns_cloudflare_name
+  test_publicdns_name = module.dns.public_dns_cloudflare_name
 }
