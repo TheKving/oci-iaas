@@ -27,7 +27,6 @@ resource "cloudflare_record" "www" {
   type    = "A"
   ttl     = 3600
 }
-
 /*
 # Create a page rule
 resource "cloudflare_page_rule" "www" {
