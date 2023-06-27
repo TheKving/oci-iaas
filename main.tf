@@ -6,6 +6,19 @@ terraform {
   }
 }
 
+terraform {
+  backend "remote" {
+    # The name of your Terraform Cloud organization.
+    organization = "kving"
+
+    # The name of the Terraform Cloud workspace to store Terraform state files in.
+    workspaces {
+      name = "kving-cloud"
+    }
+  }
+}
+
+
 provider "oci" {
   region              = var.region
   auth                = "SecurityToken"
@@ -13,6 +26,6 @@ provider "oci" {
 }
 
 module "network" {
-  source          = "./modules/network"
-  account_secrets = var.account_secrets.default.compartment_id
+  source         = "./modules/network"
+  compartment_id = var.compartment_id
 }

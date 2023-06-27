@@ -4,12 +4,16 @@ variable "region" {
   type        = string
 }
 
+variable "compartment_id" {
+  type = string
+}
+/*
 variable "account_secrets" {
   description = "Secrets from GitHub"
   type        = map(any)
   default = {
+    compartment_id = var.compartment_id
     #account_id     = env("ACCOUNT_ID"),
-    compartment_id = var.secrets["COMPARTMENT_ID"],
     #username       = env("USERNAME"),
   }
-}
+}*/

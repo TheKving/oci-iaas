@@ -1,4 +1,4 @@
-variable "account_secrets" {
+variable "compartment_id" {
   type        = string
-  description = "account secrets vars"
+  description = "var comparment id"
 }
