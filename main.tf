@@ -6,13 +6,32 @@ terraform {
   }
 }
 
+terraform {
+  backend "remote" {
+    # The name of your Terraform Cloud organization.
+    organization = "kving"
+
+    # The name of the Terraform Cloud workspace to store Terraform state files in.
+    workspaces {
+      name = "oci-iaas"
+    }
+  }
+}
+
+
 provider "oci" {
   region              = var.region
   auth                = "SecurityToken"
   config_file_profile = "terraform-iaas"
 }
 
+module "dns" {
+  source    = "./modules/dns"
+  api_token = var.cf_api_token
+}
+
 module "network" {
-  source          = "./modules/network"
-  account_secrets = var.account_secrets
+  source              = "./modules/network"
+  compartment_id      = var.oci_compartment_id
+  test_publicdns_name = module.dns.public_dns_cloudflare_name
 }

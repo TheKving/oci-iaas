@@ -4,18 +4,13 @@ variable "region" {
   type        = string
 }
 
-variable "compartment_id_env" {
-  description = "Compartment ID from environment variable"
+variable "oci_compartment_id" {
   type        = string
-  default     = var.secrets["COMPARTMENT_ID"]
+  description = "Compartment ID OCI"
+  #default = var.TF_VAR_compartment_id
 }
-
-variable "account_secrets" {
-  description = "Secrets from GitHub"
-  type        = map(any)
-  default = {
-    #account_id     = env("ACCOUNT_ID"),
-    compartment_id = env("COMPARTMENT_ID"),
-    #username       = env("USERNAME"),
-  }
+#API Token from cloudflare
+variable "cf_api_token" {
+  type        = string
+  description = "API Token Cloudflare"
 }
