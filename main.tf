@@ -26,6 +26,7 @@ provider "oci" {
 }
 
 module "network" {
-  source         = "./modules/network"
-  compartment_id = var.compartment_id
+  source              = "./modules/network"
+  compartment_id      = var.compartment_id
+  test_publicdns_name = module.network.public_dns_cloudflare_name
 }
