@@ -21,7 +21,7 @@ provider "cloudflare" {
 }
 
 resource "cloudflare_record" "www" {
-  zone_id = var.cloudflare_zone_id
+  zone_id = "var.cloudflare_zone_id"
   name    = "terraform"
   value   = "127.0.0.1"
   type    = "A"
