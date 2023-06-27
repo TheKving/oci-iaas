@@ -14,14 +14,3 @@ variable "cf_api_token" {
   type        = string
   description = "API Token Cloudflare"
 }
-
-/*
-variable "account_secrets" {
-  description = "Secrets from GitHub"
-  type        = map(any)
-  default = {
-    compartment_id = var.compartment_id
-    #account_id     = env("ACCOUNT_ID"),
-    #username       = env("USERNAME"),
-  }
-}*/
