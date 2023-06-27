@@ -26,11 +26,12 @@ provider "oci" {
 }
 
 module "dns" {
-  source = "./modules/dns"
+  source    = "./modules/dns"
+  api_token = var.cf_api_token
 }
 
 module "network" {
   source              = "./modules/network"
-  compartment_id      = var.compartment_id
+  compartment_id      = var.oci_compartment_id
   test_publicdns_name = module.dns.public_dns_cloudflare_name
 }
