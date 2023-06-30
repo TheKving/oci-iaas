@@ -1,3 +1,4 @@
+# Oracle Cloud
 variable "region" {
   default     = "uk-london-1"
   description = "Account region"
@@ -24,19 +25,18 @@ variable "oci_tenancy_ocid" {
   type        = string
 }
 
-/*
-variable "account" {
-  type = map(string)
-  default = {
-    region       = "var.region"
-    user         = "var.oci_user"
-    private_key  = "var.oci_private_key"
-    fingerprint  = "var.oci_key_fingerprint"
-    tenancy_ocid = "var.oci_tenancy_ocid"
-  }
-}*/
+variable "public_domain" {
+  description = "Public domain name"
+  type        = string
+}
 
+# Cloudflare
 variable "cf_api_token" {
   type        = string
   description = "API Token Cloudflare"
+}
+
+variable "cf_account_id" {
+  type        = string
+  description = "Account ID Cloudflare"
 }
