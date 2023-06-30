@@ -1,6 +1,6 @@
-variable "compartment_id" {
+variable "oci_tenancy_ocid" {
   type        = string
-  description = "var comparment id"
+  description = "var oci tenancy ocid"
 }
 
 variable "test_publicdns_name" {
