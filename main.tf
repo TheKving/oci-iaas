@@ -1,7 +1,8 @@
 terraform {
   required_providers {
     oci = {
-      source = "oracle/oci"
+      source  = "oracle/oci"
+      version = "5.2.1"
     }
   }
 }
@@ -20,13 +21,14 @@ terraform {
 
 
 provider "oci" {
-  auth                = "SecurityToken"
-  config_file_profile = "terraform-iaas"
-  region              = var.region
-  # user                = var.oci_user
-  private_key  = var.oci_private_key
-  fingerprint  = var.oci_key_fingerprint
-  tenancy_ocid = var.oci_tenancy_ocid
+  #  auth                = "SecurityToken"
+  #  config_file_profile = "terraform-iaas"
+  region               = var.region
+  user_ocid            = var.oci_user
+  private_key          = var.oci_private_key
+  fingerprint          = var.oci_key_fingerprint
+  tenancy_ocid         = var.oci_tenancy_ocid
+  disable_auto_retries = true
 }
 
 module "dns" {

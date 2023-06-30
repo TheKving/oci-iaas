@@ -8,18 +8,22 @@ variable "oci_user" {
   description = "OCI user"
   type        = string
 }
+
 variable "oci_private_key" {
   description = "OCI private key"
   type        = string
 }
+
 variable "oci_key_fingerprint" {
   description = "OCI key fringerprint"
   type        = string
 }
+
 variable "oci_tenancy_ocid" {
   description = "OCI tenancy"
   type        = string
 }
+
 /*
 variable "account" {
   type = map(string)
