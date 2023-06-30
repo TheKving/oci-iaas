@@ -19,10 +19,7 @@ terraform {
   }
 }
 
-
 provider "oci" {
-  #  auth                = "SecurityToken"
-  #  config_file_profile = "terraform-iaas"
   region               = var.region
   user_ocid            = var.oci_user
   private_key          = var.oci_private_key
@@ -32,8 +29,10 @@ provider "oci" {
 }
 
 module "dns" {
-  source    = "./modules/dns"
-  api_token = var.cf_api_token
+  source        = "./modules/dns"
+  api_token     = var.cf_api_token
+  account_id    = var.cf_account_id
+  public_domain = var.public_domain
 }
 
 module "network" {

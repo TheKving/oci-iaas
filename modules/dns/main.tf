@@ -19,16 +19,3 @@ terraform {
 provider "cloudflare" {
   api_token = var.api_token
 }
-
-resource "cloudflare_record" "www" {
-  zone_id = "var.cloudflare_zone_id"
-  name    = "terraform"
-  value   = "127.0.0.1"
-  type    = "A"
-  ttl     = 3600
-}
-/*
-# Create a page rule
-resource "cloudflare_page_rule" "www" {
-  # ...
-}*/
