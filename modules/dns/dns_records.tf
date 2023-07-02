@@ -4,7 +4,7 @@ resource "cloudflare_zone" "domain" {
 }
 resource "cloudflare_record" "www" {
   zone_id = cloudflare_zone.domain.id
-  name    = "terraform"
+  name    = "terraform-test"
   value   = "127.0.0.1"
   type    = "A"
   ttl     = 3600
